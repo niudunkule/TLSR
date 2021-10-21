@@ -145,7 +145,7 @@ def calc_PSNR(input, target, rgb_range, shave):
 
 
 def save_checkpoint(model, epoch, folder):
-    model_path = folder + '/model_epoch_{.f}.pth'.format(epoch)
+    model_path = folder + '/model_epoch_{}.pth'.format(epoch)
     torch.save(model.state_dict(), model_path)
     print('Checkpoint saved to {}'.format(model_path))
 
