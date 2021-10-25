@@ -17,6 +17,10 @@ from data import data
 import src.degradation as degradation
 from tqdm import tqdm
 
+cudnn.benchmark = True
+torch.backends.cudnn.deterministic = False
+torch.backends.cudnn.enabled = True
+
 
 def main():
     global opt, SR_Model, DoTNet
