@@ -17,14 +17,16 @@ from data import data
 import src.degradation as degradation
 from tqdm import tqdm
 
-cudnn.benchmark = True
-torch.backends.cudnn.deterministic = False
-torch.backends.cudnn.enabled = True
 
 
 def main():
+    
     global opt, SR_Model, DoTNet
     opt = utils.print_args(args)
+
+    cudnn.benchmark = True
+    torch.backends.cudnn.deterministic = False
+    torch.backends.cudnn.enabled = True
 
     if opt.n_GPUs == 1:
         torch.cuda.set_device(opt.GPU_ID)
